@@ -1,16 +1,20 @@
 from abc import ABC, abstractmethod
-# Arriaga Sanchez Genesis, Bajaña Tarira Jenniffer, Landazuri Barcia Liliana, Mieles Piloso Andrews, Vera Saltos Jimmy
-
+# Arriaga Sanchez Genesis, Bajaña Tarira Jenniffer, Landazuri Barcia Liliana,
+# Mieles Piloso Andrews, Vera Saltos Jimmy
 
 class Persona1(ABC):
 
-    def __init__(self, cedula: str = None, nombre: str = None, apellido: str = None, email: str = None,
-                 telefono: str = None, direccion: str = None, carrera: str = None,  numero_libros: int = 0,
-                 activo: bool = True):
+    def __init__(self, cedula: str, nombre: str, apellido: str, email: str,
+                 telefono: str, direccion: str, carrera: str, numero_libros: int,
+                 activo: bool, fecha_nacimiento: int, edad: int, estatura: int, peso:int):
         self._cedula = cedula
         self._nombre = nombre
         self._apellido = apellido
         self._email = email
+        self._fecha_nacimiento = fecha_nacimiento
+        self._edad = edad
+        self._estatura = estatura
+        self._peso = peso
         self._telefono = telefono
         self._direccion = direccion
         self._carrera = carrera
@@ -74,6 +78,38 @@ class Persona1(ABC):
         self._carrera = carrera
 
     @property
+    def fecha_nacimento(self):
+        return self._fecha_nacimiento
+
+    @fecha_nacimento.setter
+    def fecha_nacimiento(self, fecha_nacimiento):
+        self._fecha_nacimiento = fecha_nacimiento
+
+    @property
+    def edad(self):
+        return self._edad
+
+    @edad.setter
+    def edad(self, edad):
+        self._edad = edad
+
+    @property
+    def estatura(self):
+        return self._estatura
+
+    @estatura.setter
+    def estatura(self, estatura):
+        self._estatura = estatura
+
+    @property
+    def peso(self):
+        return self._peso
+
+    @peso.setter
+    def peso(self, peso):
+        self._peso = peso
+
+    @property
     def numero_libros(self):
         return self._numero_libros
 
@@ -98,9 +134,11 @@ class Persona1(ABC):
         pass
 
     def __str__(self):
-        return f"Cédula: {self._cedula}\nNombre: {self._nombre}\nApellido: {self._apellido}\nEmail: {self._email}\n" \
-               f"Teléfono: {self._telefono}\nDirección: {self._direccion}\nNúmero de libros: {self._numero_libros}" \
-               f"\nActivo: {self._activo}\nCarrera: {self._carrera}"
+        return (f"Cédula: {self._cedula}\nNombre: {self._nombre}\nApellido: {self._apellido}\n"
+                f"Estatura: {self._estatura}\nEmail: {self._email}\nTeléfono: {self._telefono}\n"
+                f"Dirección: {self._direccion}\nNúmero de libros: {self._numero_libros}\nActivo: {self._activo}"
+                f"\nCarrera: {self._carrera}")
+
 
 if __name__ == '__main__':
     pass

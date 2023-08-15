@@ -1,4 +1,5 @@
-# Arriaga Sanchez Genesis, Bajaña Tarira Jenniffer, Landazuri Barcia Liliana, Mieles Piloso Andrews, Vera Saltos Jimmy
+# Arriaga Sanchez Genesis, Bajaña Tarira Jenniffer, Landazuri Barcia Liliana,
+# Mieles Piloso Andrews, Vera Saltos Jimmy
 import sys
 
 from Proyecto.UI.vtn_principal import Ui_vtn_principal

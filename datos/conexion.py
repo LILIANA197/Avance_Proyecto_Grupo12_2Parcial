@@ -1,5 +1,7 @@
+# -*- coding: latin-1 -*-
+# Arriaga Sanchez Genesis, Bajaña Tarira Jenniffer, Landazuri Barcia Liliana,
+# Mieles Piloso Andrews, Vera Saltos Jimmy
 import sys
-
 import pyodbc as bd
 
 
@@ -57,3 +59,4 @@ class Conexion:
 if __name__ == '__main__':
     print(Conexion.obtenerConexion())
     print(Conexion.obtenerCursor())
+

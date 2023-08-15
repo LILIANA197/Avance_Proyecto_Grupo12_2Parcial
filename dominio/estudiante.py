@@ -1,5 +1,6 @@
 from Proyecto.dominio.persona import Persona1
-# Arriaga Sanchez Genesis, Bajaña Tarira Jenniffer, Landazuri Barcia Liliana, Mieles Piloso Andrews, Vera Saltos Jimmy
+# Arriaga Sanchez Genesis, Bajaña Tarira Jenniffer, Landazuri Barcia Liliana,
+# Mieles Piloso Andrews, Vera Saltos Jimmy
 
 
 class Estudiante(Persona1):
@@ -7,14 +8,14 @@ class Estudiante(Persona1):
 
     def __init__(self, cedula: str = None, nombre: str = None, apellido: str = None, email: str = None,
                  telefono: str = None, direccion: str = None, carrera: str = None, numero_libros: int = 0,
-                 activo: bool = True, nivel: int = 0):
+                 activo: bool = True, nivel: int = 0, fecha_nacimiento: int = None, edad: int = None,
+                 estatura: int = None, peso: int = None):
         super().__init__(cedula=cedula, nombre=nombre, apellido=apellido, email=email, telefono=telefono,
-                         direccion=direccion, carrera=carrera, numero_libros=numero_libros, activo=activo)
+                         direccion=direccion, carrera=carrera, numero_libros=numero_libros, activo=activo,
+                         fecha_nacimiento=fecha_nacimiento, edad=edad, estatura=estatura, peso=peso)
         Estudiante.contador_estudiante += 1
         self._id = Estudiante.contador_estudiante
         self._nivel = nivel
-
-
 
     @property
     def id(self):
@@ -45,9 +46,11 @@ class Estudiante(Persona1):
         return False
 
     def __str__(self):
-        return (f"Cédula: {self._cedula}\nNombre: {self._nombre}\nApellido: {self._apellido}\nEmail: {self._email}\n"
-                f"Teléfono: {self._telefono}\nDirección: {self._direccion}\nNúmero de libros: {self._numero_libros}"
-                f"\nActivo: {self._activo}\nCarrera: {self._carrera}\nId: {self._id}\nNivel: {self._nivel}")
+        return (f"Id: {self._id}\nCédula: {self._cedula}\nNombre: {self._nombre}\nApellido: {self._apellido}\n"
+                f"Email: {self._email}\nCarrera: {self._carrera}\nActivo: {self._activo}\n"
+                f"Fecha Nacimiento: {self._fecha_nacimiento}\nEdad: {self._edad}\nEstatura: {self._estatura}\n"
+                f"Peso: {self._peso}")
+
 
 if __name__ == '__main__':
     est1 = Estudiante(cedula="0123456789", nombre="Pablo", apellido="Pérez", email="pablo@gmail.com",
